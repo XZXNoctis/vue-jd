@@ -3,7 +3,8 @@
 		<router-view/>
 	</div>
 </template>
-
+<script>
+</script>
 <style>
 	html {
 		font-size: calc(100vw/7.5);
