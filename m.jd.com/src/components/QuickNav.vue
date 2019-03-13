@@ -65,7 +65,7 @@
 <style>
 	.quick-nav {
 		background-color: #FFFFFF;
-		padding-bottom: 10px;
+		padding-bottom: 0.2rem;
 	}
 	
 	.nav-item {
@@ -74,14 +74,14 @@
 	}
 	
 	.nav-item img {
-		width: 42px;
-		height: 42px;
-		margin-top: 10px;
+		width: 0.8rem;
+		height: 0.8rem;
+		margin-top: 0.2rem;
 	}
 	
 	.nav-item .nav-title {
-		font-size: 12px;
-		line-height: 20px;
+		font-size: 0.24rem;
+		line-height: 0.4rem;
 		color: #666666;
 	}
 </style>
