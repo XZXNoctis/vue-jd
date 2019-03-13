@@ -1,8 +1,7 @@
 <template>
 
-	<div class="search-bar flex">
+	<div class="search-bar flex"  :class="{isFixed:isFixed}">
 		<div class="category">
-
 			<span class="icon"></span>
 		</div>
 		<div class="search-from  flex-item">
@@ -19,19 +18,48 @@
 <script>
 	export default {
 		data: function() {
-			return {};
+			return {
+				isFixed:false
+			};
 		},
 		methods: {},
 		props: [],
 		watch: {},
 		computed: {},
-		created: function() {},
+		created() {},
+		mounted(){
+			/**
+			 *  function(){} 
+			 * 
+			 *   改成箭头函数,好处就是this仍然会继续指向vue.js不会乱指。
+			 * 
+			 *  ()=>{}
+			 * 
+			 * 
+			 * **/
+			// 监听滚动事件
+			window.onscroll = ()=>{
+				// 获取滚动的高度
+				var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+				if(scrollTop>40){
+					this.isFixed = true;
+				}else{
+					this.isFixed = false;
+				}
+			}
+		}
 	}
 </script>
 
 <style>
+	
 	.search-bar {
 		height: 44px;
+		width: 100%;
+		position: fixed;
+	}
+	
+	.search-bar.isFixed{
 		background-color: #e43130;
 	}
 	
@@ -81,36 +109,4 @@
 		background-color: #FFFFFF;
 		border: none;
 	}
-	/*.search-bar {
-		height: 44px;
-		background-color: red;
-		position: relative;
-	}
-	.search-bar .category,.search-bar .login{
-		width: 50px;
-		height: 44px;
-		background-color: blue;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-	}
-	
-	.search-bar .login{
-		right: 0px;
-		left: auto;
-	}
-	
-	.search-from{
-		width: 100%;
-		padding: 0px 50px;
-		box-sizing: border-box;
-		padding-top: 7px;
-	}
-	.search-from input{
-		width: 100%;
-		height: 30px;
-		box-sizing: border-box;
-		border-radius: 15px;
-		background-color: #FFFFFF;
-	}*/
 </style>
