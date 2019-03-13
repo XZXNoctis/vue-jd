@@ -57,6 +57,7 @@
 		height: 44px;
 		width: 100%;
 		position: fixed;
+		z-index: 9999;
 	}
 	
 	.search-bar.isFixed{
