@@ -2,8 +2,8 @@
 
 	<div id="index">
 		<search-bar></search-bar>
-		<!--<h1>京东首页</h1>
-		-->
+		<swiper></swiper>
+		
 		<div style="height: 1000px;background-color: yellow;"></div>
 		
 		<tab-bar></tab-bar>
@@ -14,6 +14,7 @@
 <script>
 	import SearchBar from "@/components/SearchBar.vue";
 	import TabBar from "@/components/TabBar.vue";
+	import Swiper from "@/components/Swiper.vue";
 
 	export default {
 		data: function() {
@@ -25,7 +26,8 @@
 		computed: {},
 		components: {
 			SearchBar,
-			TabBar
+			TabBar,
+			Swiper
 		}
 	}
 </script>
