@@ -4,9 +4,18 @@
 		<search-bar></search-bar>
 		<swiper></swiper>
 		
-		<div style="height: 1000px;background-color: yellow;"></div>
+		<quick-nav></quick-nav>
+		
+		
+		
+		<div class="product-list clear">
+			
+			<product v-for="n in 10"  :id="n" ></product>
+			
+		</div>
 		
 		<tab-bar></tab-bar>
+		<div style="height: 1000px;background-color: yellow;"></div>
 	</div>
 
 </template>
@@ -15,6 +24,9 @@
 	import SearchBar from "@/components/SearchBar.vue";
 	import TabBar from "@/components/TabBar.vue";
 	import Swiper from "@/components/Swiper.vue";
+	import QuickNav from "@/components/QuickNav.vue";
+	import Product from "@/components/Product.vue";
+	
 
 	export default {
 		data: function() {
@@ -27,7 +39,12 @@
 		components: {
 			SearchBar,
 			TabBar,
-			Swiper
+			Swiper,
+			QuickNav,
+			Product
+		},
+		created(){
+			
 		}
 	}
 </script>
