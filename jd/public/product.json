@@ -1,0 +1,23 @@
+[
+	{
+		"id": 1,
+		"image": "/product/1.jpg",
+		"title": "强光手电筒 小型迷你变焦家用车载led户外聚光远射王 伸缩调焦款",
+		"price": 10
+	}, {
+		"id": 2,
+		"image": "/product/2.jpg",
+		"title": "妃琳卡印花元素哑光口红小羊皮玫瑰礼盒小金条包装持久显色保湿豆沙色不显唇纹唇膏平价学生礼盒套装 G01豆沙色",
+		"price": 49
+	}, {
+		"id": 3,
+		"image": "/product/3.jpg",
+		"title": "TP-LINK TL-WDR5620 1200M 5G双频智能无线路由器 四天线智能wifi 稳定穿墙高速家用路由器",
+		"price": 150
+	}, {
+		"id": 4,
+		"image": "/product/4.jpg",
+		"title": "小雨伞",
+		"price": 40
+	}
+]

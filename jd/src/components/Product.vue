@@ -92,10 +92,10 @@
 		-webkit-box-orient: vertical;
 		word-break: break-word;
 		color: #232326;
-		padding-top: 0.1rem;
 		line-height: 0.32rem;
-		padding-bottom: 0.06rem;
 		padding: 0 0.08rem;
+		margin-top: 0.1rem;
+		margin-bottom: 0.06rem;
 	}
 	
 	.product-price {
