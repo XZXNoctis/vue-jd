@@ -24,39 +24,37 @@
 		height: 100%;
 	}
 	
-	.left{
+	.left {
 		float: left;
 	}
-	.right{
+	
+	.right {
 		float: right;
 	}
 	
-	.clear:after{
+	.clear:after {
 		display: block;
 		content: "";
 		clear: both;
 	}
 	
-	.flex{
-		display:-webkit-flex;
+	.flex {
 		display: flex;
 	}
 	
-	.flex-item{
-		-webkit-flex: 1;
+	.flex-item {
 		flex: 1;
 	}
 	
-	a{
+	a {
 		text-decoration: none;
 		color: #333333;
 	}
 	
-		ul,
+	ul,
 	ol {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
-	
 </style>

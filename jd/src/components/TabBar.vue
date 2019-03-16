@@ -1,8 +1,13 @@
 <template>
 	<div class="tab-bar">
 		<ul class="flex">
-			<li class="flex-item" :class="{active:navIndex==index}" @click="goTo(index,item.url);" v-for="(item,index) in nav" :key="index">
-				<!--<router-link :to="item.url">
+			<li class="flex-item" :class="{active:navIndex==index}" @click="goTo(index)" v-for="(item,index) in nav" :key="index">
+				<!--
+					path:通过路径进行路由的跳转，参数传递只能用 query
+					name:通过路由的名称进行跳转，参数传递可以用query和params
+				-->
+				<!--<router-link :to="{path:item.url,query:{index:index}}">-->
+				<!--<router-link :to="{name:item.name,query:{index:index},params:{index:index}}">
 					<span :class="item.icon"></span>
 					<div class="title" v-text="item.title"></div>
 				</router-link>-->
@@ -22,30 +27,60 @@
 				nav: [{
 					title: '首页',
 					icon: 'fa fa-home',
-					url: '/'
+					url: '/',
+					name: 'home'
 				}, {
 					title: '分类',
 					icon: 'fa fa-list',
-					url: '/category'
+					url: '/category',
+					name: 'category'
 				}, {
 					title: '搜索',
 					icon: 'fa fa-search',
-					url: '/search'
+					url: '/search',
+					name: 'search'
 				}, {
 					title: '购物车',
 					icon: 'fa fa-shopping-cart',
-					url: '/shopping'
+					url: '/shopping',
+					name: 'shopping'
 				}, {
 					title: '我的',
 					icon: 'fa fa-user',
-					url: '/user'
+					url: '/user',
+					name: 'user'
 				}]
 			};
-		},methods:{
-			goTo(index,url){
+		},
+		methods: {
+			goTo(index) {
 				this.navIndex = index;
-				this.$router.push(url);
+				//	this.$router.push(this.nav[index].url);
+				//	this.$router.push({path:this.nav[index].url,query:{index:index}});
+				this.$router.push({
+					name: this.nav[index].name,
+					query: {
+						index: index
+					},
+					params: {
+						index: index
+					}
+				});
 			}
+		},
+		created() {
+			// 全局的路由对象
+			console.log(this.$router);
+			// 当前页的路由对象
+			console.log(this.$route);
+
+			//			if(this.$route.params.index >= 0) {
+			//				this.navIndex = this.$route.params.index;
+			//			} else {
+			//				this.navIndex = 0;
+			//			}
+
+			this.navIndex = this.$route.params.index >= 0 ? this.$route.params.index : 0;
 		}
 
 	}
@@ -77,10 +112,12 @@
 	.tab-bar .fa {
 		font-size: 0.48rem;
 	}
-	.tab-bar .active{
+	
+	.tab-bar .active {
 		color: #f23030;
 	}
-	.tab-bar .active a{
+	
+	.tab-bar .active a {
 		color: #f23030;
 	}
 </style>
